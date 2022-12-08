@@ -13,12 +13,9 @@ range(7, 6); // []
 
 const range = (start, end) => {
   let arr = [];
-  if (end <= start) {
-    return [];
-  }
-  arr.push(start);
-  return arr.concat(range(start + 1, end));
-
+  if (end <= start) return []
+  arr.push(start)
+  return arr.concat(range(start + 1, end))
 }
 
 
