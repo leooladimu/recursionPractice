@@ -10,9 +10,22 @@ sumArray([0, 1, -3]); //  -2
 sumArray([1, 2, 3, 4, 5]); // 15
 ***********************************************************************/
 
-function sumArray(arr) {
-  // Your code here
+
+const sumArray = (arr) => {
+  console.log('arr:', arr);
+  if (!arr.length) {
+    return null
+  }
+  let firstElement = arr.shift();
+  console.log('firstElement:', firstElement);
+  return firstElement += sumArray(arr)
 }
+
+  console.log(sumArray([1, 2, 3]));
+  // console.log(sumArray([0, 1, -3])); //  -2
+  // console.log(sumArray([1, 2, 3, 4, 5])); // 15
+
+
   
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {

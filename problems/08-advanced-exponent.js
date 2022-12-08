@@ -27,9 +27,55 @@ times `advancedExponent` is being recursively called.
 ***********************************************************************/
 
 
+
 function advancedExponent(b, n) {
-  // Your code here
+  let result1 = 0;
+  let result2 = 0;
+  if (n === 0) {
+    return 1;
+  }
+  if (n === 1) {
+    return b;
+  }
+  if (n % 2 === 0) {
+    result1 = advancedExponent(b, n / 2);
+    return result1 * result1;
+  } else {
+    result2 = advancedExponent(b, (n - 1) / 2);
+    return b * result2 * result2;
+  }
 }
+
+
+//   if (n === 0) {
+//     return 1;
+//   }
+// 
+//   if (n === 1) {
+//       return b;
+//   }
+//   if (n % 2 === 0) {
+//     return advancedExponent((b, n / 2) ** 2);
+//   }
+//   if (n % 2 === 1) {
+//     return advancedExponent((b, (n - 1) / 2) ** 2);
+//   }
+//   console.log((b * b) * (n / 2));
+//   let expo = (b * b) * (n / 2);
+//   let negExpo = (b * b) * ((n - 1) / 2)
+//   let sqrtExpo = expo * expo  
+//   let sqrtNegExpo = negExpo * negExpo
+//   console.log(sqrtNegExpo);
+//   console.log(sqrtExpo);
+  // b raised to the power of half of n power
+  // square the results thereof 
+// }
+// 
+// if (toThePowerOf < 0) {
+//   return (1 / num) * exponent(num, toThePowerOf + 1)
+// }
+// return num * exponent(num, toThePowerOf - 1)
+
 
 
 console.log(advancedExponent(2, 0)); // 1
